@@ -45,6 +45,7 @@ class StartScene extends egret.Sprite{
         startBtn.y = stageH/2;
         startBtn.touchEnabled = true;
         this.startBtn = startBtn;
+        startBtn.addEventListener(egret.TouchEvent.TOUCH_END, this.startBtnCallback,this);
         //按钮上下移动
         this.startBtnMove();
         //添加台阶
@@ -69,6 +70,16 @@ class StartScene extends egret.Sprite{
         var tw = egret.Tween.get(startBtn);
         tw.to({y:stageH/2 + startBtn.height/10}, 1500).to({y:stageH/2 - startBtn.height/10}, 1500)
         .call(this.startBtnMove, this);
+    }
+
+    //开始按钮回调
+    private startBtnCallback():void{
+        if(!this.canChoose){
+            return;
+        }
+        GameManager.setHeroIndex(this.curHero);
+        var layer = new GameScene();
+        Director.getInstance().runScene(layer);
     }
 
     //添加台阶

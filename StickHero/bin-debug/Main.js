@@ -92,6 +92,7 @@ var Main = (function (_super) {
         var assetAdapter = new AssetAdapter();
         egret.registerImplementation("eui.IAssetAdapter", assetAdapter);
         egret.registerImplementation("eui.IThemeAdapter", new ThemeAdapter());
+        Director.getInstance().setRoot(this);
         this.runGame().catch(function (e) {
             console.log(e);
         });
@@ -162,7 +163,8 @@ var Main = (function (_super) {
      * Create scene interface
      */
     Main.prototype.createGameScene = function () {
-        this.addChild(new StartScene());
+        var startScene = new StartScene();
+        Director.getInstance().runScene(startScene);
     };
     return Main;
 }(eui.UILayer));

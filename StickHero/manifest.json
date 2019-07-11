@@ -9,14 +9,20 @@
 		"libs/modules/game/game.js"
 	],
 	"game": [
+		"bin-debug/game/FailedLayer.js",
 		"bin-debug/AssetAdapter.js",
-		"bin-debug/LoadingUI.js",
 		"bin-debug/Main.js",
 		"bin-debug/Platform.js",
 		"bin-debug/ThemeAdapter.js",
 		"bin-debug/game/BgLayer.js",
+		"bin-debug/game/Director.js",
+		"bin-debug/LoadingUI.js",
+		"bin-debug/game/GameManager.js",
+		"bin-debug/game/GameScene.js",
 		"bin-debug/game/Hero.js",
+		"bin-debug/game/ShareTips.js",
 		"bin-debug/game/Stage.js",
-		"bin-debug/game/StartScene.js"
+		"bin-debug/game/StartScene.js",
+		"bin-debug/game/Stick.js"
 	]
 }

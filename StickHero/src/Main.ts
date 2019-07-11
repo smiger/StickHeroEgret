@@ -51,6 +51,7 @@ class Main extends eui.UILayer {
         egret.registerImplementation("eui.IAssetAdapter", assetAdapter);
         egret.registerImplementation("eui.IThemeAdapter", new ThemeAdapter());
 
+        Director.getInstance().setRoot(this);
 
         this.runGame().catch(e => {
             console.log(e);
@@ -97,7 +98,8 @@ class Main extends eui.UILayer {
      * Create scene interface
      */
     protected createGameScene(): void {
-        this.addChild(new StartScene());
+        var startScene = new StartScene();
+        Director.getInstance().runScene(startScene);
     }
     
 }
