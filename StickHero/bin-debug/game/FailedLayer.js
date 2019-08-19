@@ -67,7 +67,7 @@ var FailedLayer = (function (_super) {
         //先获取存档分数
         var maxScoreStr = egret.localStorage.getItem('maxScore');
         var maxScore = parseInt(maxScoreStr);
-        if (maxScore < curScore) {
+        if (!maxScore || maxScore < curScore) {
             maxScore = curScore;
             egret.localStorage.setItem('maxScore', maxScore + '');
         }

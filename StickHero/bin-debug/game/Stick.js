@@ -35,7 +35,7 @@ var Stick = (function (_super) {
     };
     //
     Stick.prototype.growHeight = function () {
-        //如果长度超过屏幕高德一半，则不再变长
+        //如果长度超过屏幕高度一半，则不再变长
         if (this.stickSprite.height * this.scaleY > this.stageH / 2) {
             return;
         }
